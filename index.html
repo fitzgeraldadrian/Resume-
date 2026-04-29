@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrian Fitzgerald MBA — Global Channel & Partnerships Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #1F8CEB;
+    --dark: #0A1628;
+    --mid: #1E3A5F;
+    --accent: #FF6B35;
+    --accent-soft: #FFF0EA;
+    --text: #0A1628;
+    --muted: #5A6B7E;
+    --light: #8A9BAE;
+    --surface: #F4F7FB;
+    --white: #ffffff;
+    --border: #E2EAF4;
+    --green: #00C48C;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,22,40,0.93); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 80px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo { width: 28px; height: 28px; background: var(--blue); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: white; font-weight: 700; font-family: 'Fraunces', serif; }
+  .nav-title { font-size: 13px; color: rgba(255,255,255,0.5); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: white; }
+
+  /* HERO */
+  .hero { background: var(--dark); padding-top: 60px; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; top: -150px; right: -150px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(31,140,235,0.1) 0%, transparent 65%); pointer-events: none; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+  .hero-left { padding: 80px 60px 80px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(31,140,235,0.14); border: 1px solid rgba(31,140,235,0.28); color: var(--blue); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 32px; width: fit-content; animation: fadeUp 0.6s ease both; }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+  .hero-name { font-family: 'Fraunces', serif; font-size: clamp(42px, 5vw, 66px); font-weight: 700; color: white; line-height: 1.02; margin-bottom: 12px; animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-name span { color: var(--blue); }
+  .hero-credential { font-size: 15px; color: rgba(255,255,255,0.45); font-weight: 300; margin-bottom: 8px; animation: fadeUp 0.6s 0.15s ease both; }
+  .hero-location { font-size: 13px; color: rgba(255,255,255,0.3); margin-bottom: 40px; animation: fadeUp 0.6s 0.18s ease both; }
+  .hero-headline { font-family: 'Fraunces', serif; font-size: clamp(17px, 2vw, 21px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.78); line-height: 1.55; border-left: 3px solid var(--accent); padding-left: 24px; margin-bottom: 48px; animation: fadeUp 0.6s 0.25s ease both; max-width: 480px; }
+  .hero-contacts { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp 0.6s 0.35s ease both; }
+  .contact-btn { display: inline-flex; align-items: center; gap: 7px; padding: 11px 20px; border-radius: 8px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
+  .contact-btn.primary { background: var(--blue); color: white; font-weight: 500; }
+  .contact-btn.primary:hover { background: #1679d4; transform: translateY(-1px); }
+  .contact-btn.ghost { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); color: rgba(255,255,255,0.7); }
+  .contact-btn.ghost:hover { background: rgba(255,255,255,0.13); }
+
+  /* HERO RIGHT — STATS */
+  .hero-right { background: var(--mid); display: flex; flex-direction: column; justify-content: center; padding: 80px 60px; position: relative; overflow: hidden; animation: fadeIn 0.8s 0.5s ease both; }
+  .hero-right::before { content: ''; position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(31,140,235,0.18) 0%, transparent 70%); }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; position: relative; z-index: 2; }
+  .stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 26px 22px; border-radius: 12px; transition: all 0.3s; }
+  .stat-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+  .stat-number { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 700; color: white; line-height: 1; margin-bottom: 6px; }
+  .stat-number span { color: var(--accent); }
+  .stat-label { font-size: 11px; color: rgba(255,255,255,0.36); line-height: 1.4; }
+
+  /* EXPERTISE BAR */
+  .expertise-bar { background: linear-gradient(135deg, #1F8CEB 0%, #0A4D8C 100%); padding: 24px 80px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .exp-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-right: 8px; flex-shrink: 0; }
+  .exp-pill { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); color: white; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 100px; }
+
+  /* SECTIONS */
+  section { padding: 96px 80px; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+  .section-title { font-family: 'Fraunces', serif; font-size: clamp(30px, 3.8vw, 46px); font-weight: 600; color: var(--text); line-height: 1.15; margin-bottom: 20px; }
+  .section-intro { font-size: 16px; color: var(--muted); max-width: 640px; line-height: 1.75; margin-bottom: 60px; }
+
+  /* CAREER TIMELINE */
+  .career-section { background: var(--white); }
+  .job { margin-bottom: 52px; padding-bottom: 52px; border-bottom: 1px solid var(--border); }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .job-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; gap: 20px; }
+  .job-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: var(--text); }
+  .job-dates { font-size: 12px; color: var(--blue); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; padding-top: 4px; }
+  .job-company { font-size: 14px; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
+  .job-summary { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .job-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .job-bullets li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--muted); line-height: 1.65; }
+  .job-bullets li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 8px; }
+  .job-bullets li strong { color: var(--text); font-weight: 500; }
+  .job-wins { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .win-pill { font-size: 11px; padding: 4px 12px; border-radius: 100px; background: rgba(31,140,235,0.07); border: 1px solid rgba(31,140,235,0.2); color: var(--blue); font-weight: 500; }
+  .win-pill.grey { background: var(--surface); border-color: var(--border); color: var(--muted); font-weight: 400; }
+
+  /* AI HIGHLIGHT */
+  .ai-highlight { background: rgba(31,140,235,0.04); border: 1px solid rgba(31,140,235,0.15); border-radius: 10px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+  .ai-highlight-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .ai-highlight-text { font-size: 14px; color: var(--text); line-height: 1.65; }
+  .ai-highlight-text strong { color: var(--blue); font-weight: 500; }
+
+  /* EXPERTISE SECTION */
+  .expertise-section { background: var(--dark); }
+  .expertise-section .section-title { color: white; }
+  .expertise-section .section-label { color: var(--blue); }
+  .expertise-section .section-intro { color: rgba(255,255,255,0.45); }
+  .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .exp-card { border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 28px; transition: all 0.3s; position: relative; overflow: hidden; }
+  .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--blue); transform: scaleX(0); transition: transform 0.3s; }
+  .exp-card:hover::before { transform: scaleX(1); }
+  .exp-card:hover { border-color: rgba(31,140,235,0.3); background: rgba(31,140,235,0.04); }
+  .exp-card-icon { font-size: 24px; margin-bottom: 16px; }
+  .exp-card-title { font-size: 15px; font-weight: 600; color: white; margin-bottom: 10px; }
+  .exp-card-body { font-size: 13px; color: rgba(255,255,255,0.42); line-height: 1.7; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .exp-tag { font-size: 11px; padding: 3px 9px; border-radius: 4px; background: rgba(31,140,235,0.1); border: 1px solid rgba(31,140,235,0.2); color: rgba(255,255,255,0.6); }
+
+  /* EDUCATION */
+  .edu-section { background: var(--surface); }
+  .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .edu-card { background: white; border-radius: 14px; padding: 28px; border: 1px solid var(--border); transition: all 0.3s; }
+  .edu-card:hover { border-color: var(--blue); box-shadow: 0 10px 40px rgba(31,140,235,0.08); transform: translateY(-2px); }
+  .edu-icon { font-size: 24px; margin-bottom: 14px; }
+  .edu-title { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .edu-org { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .edu-year { font-size: 11px; color: var(--blue); font-weight: 500; letter-spacing: 0.06em; }
+
+  /* CONTACT FOOTER */
+  .footer { background: var(--dark); padding: 100px 80px; text-align: center; }
+  .footer .section-title { color: white; margin-bottom: 16px; }
+  .footer .section-intro { color: rgba(255,255,255,0.4); margin: 0 auto 40px; text-align: center; }
+  .footer-contacts { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .footer-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.11); color: rgba(255,255,255,0.7); padding: 12px 24px; border-radius: 100px; font-size: 14px; text-decoration: none; transition: all 0.2s; }
+  .footer-pill:hover { background: rgba(255,255,255,0.12); color: white; }
+
+  /* ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(28px); transition: all 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* PASSWORD */
+  #pw-gate { position: fixed; inset: 0; z-index: 9999; background: #0A1628; display: flex; align-items: center; justify-content: center; }
+  #pw-gate.hidden { display: none; }
+  .pw-box { background: #1E3A5F; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 52px 48px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 40px 100px rgba(0,0,0,0.5); }
+  .pw-logo { width: 48px; height: 48px; background: #1F8CEB; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: white; margin: 0 auto 24px; }
+  .pw-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: white; margin-bottom: 8px; }
+  .pw-sub { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 32px; line-height: 1.5; }
+  .pw-input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 14px 18px; font-size: 15px; color: white; text-align: center; letter-spacing: 0.1em; outline: none; font-family: 'DM Sans', sans-serif; margin-bottom: 12px; transition: border-color 0.2s; }
+  .pw-input::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 0; }
+  .pw-input:focus { border-color: #1F8CEB; }
+  .pw-btn { width: 100%; background: #1F8CEB; color: white; border: none; border-radius: 10px; padding: 14px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+  .pw-btn:hover { background: #1679d4; }
+  .pw-btn:active { transform: scale(0.98); }
+  .pw-error { font-size: 12px; color: #FF6B6B; margin-top: 10px; min-height: 18px; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-8px)} 40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} }
+  .pw-shake { animation: shake 0.4s ease; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; } .hero-right { display: none; }
+    .hero-left { padding: 100px 32px 80px; } section { padding: 70px 32px; }
+    .expertise-bar { padding: 20px 32px; } .exp-grid, .edu-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 24px; } .nav-links { display: none; } .footer { padding: 70px 32px; }
+    .job-header { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">AF</div>
+    <span class="nav-title">Adrian Fitzgerald MBA</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#career">Career</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-tag">Open to Senior Partnerships & Channel Leadership Roles</div>
+      <h1 class="hero-name">Adrian<br><span>Fitzgerald</span><br>MBA</h1>
+      <p class="hero-credential">Global Channel & Partnerships Leader</p>
+      <p class="hero-location">📍 Dublin, Ireland &nbsp;·&nbsp; Operating across EMEA · NAMER · APAC</p>
+      <p class="hero-headline">Building high-performance indirect revenue engines — GSI, Hyperscaler CoSell, AI & SaaS GTM — from greenfield to scale.</p>
+      <div class="hero-contacts">
+        <a href="mailto:afitz27@gmail.com" class="contact-btn primary">✉ afitz27@gmail.com</a>
+        <a href="tel:+353879500092" class="contact-btn ghost">📞 +353 87 9500092</a>
+        <a href="https://www.linkedin.com/in/fitzgeraldadrian/" target="_blank" class="contact-btn ghost">in LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-number">$<span>15M</span></div>
+          <div class="stat-label">Partner-influenced pipeline built at QAD globally</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number"><span>250</span>%</div>
+          <div class="stat-label">Channel sales growth delivered in 6 months at Vodafone</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">$0<span>→$1M</span></div>
+          <div class="stat-label">ARR built in 6 months from a greenfield standing start</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number"><span>15</span>+</div>
+          <div class="stat-label">Years building indirect revenue engines globally</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERTISE BAR -->
+<div class="expertise-bar">
+  <span class="exp-label">Core expertise</span>
+  <span class="exp-pill">GSI Leadership</span>
+  <span class="exp-pill">Hyperscaler CoSell</span>
+  <span class="exp-pill">AI & SaaS GTM</span>
+  <span class="exp-pill">ISV Ecosystems</span>
+  <span class="exp-pill">P&L Management</span>
+  <span class="exp-pill">MEDDICC & CoSell</span>
+  <span class="exp-pill">Greenfield Builds</span>
+  <span class="exp-pill">EMEA · NAMER · APAC</span>
+</div>
+
+<!-- CAREER -->
+<section id="career" class="career-section">
+  <div class="section-label reveal">Professional experience</div>
+  <h2 class="section-title reveal">Built from scratch.<br>Scaled to global.</h2>
+  <p class="section-intro reveal">Every role has been defined by building what didn't exist — greenfield ecosystems, new GTM models, and revenue engines that compound over time.</p>
+
+  <!-- QAD -->
+  <div class="job reveal">
+    <div class="job-header">
+      <div class="job-title">Channel & Partnership Director, Global</div>
+      <div class="job-dates">2023 – Present</div>
+    </div>
+    <div class="job-company">QAD &nbsp;·&nbsp; ERP, Supply Chain, AI & Agentic Solutions &nbsp;·&nbsp; Global</div>
+    <div class="ai-highlight">
+      <div class="ai-highlight-icon">🤖</div>
+      <div class="ai-highlight-text"><strong>AI Leadership:</strong> Leading the GTM Channel Strategy for QAD Champion AI and Agentic AI solutions — positioning the portfolio as the industry standard for autonomous manufacturing and supply chain decision-making as a System of Action.</div>
+    </div>
+    <ul class="job-bullets">
+      <li><div><strong>Global Partner-Sourced Pipeline:</strong> Built $15M in partner-influenced pipeline by designing and executing QAD's first global indirect GTM strategy across ERP, Supply Chain, and Workforce Solutions.</div></li>
+      <li><div><strong>Ecosystem Build:</strong> Recruited and onboarded 25 partners including GSIs, Regional SIs, MSPs, and Cloud Distributors across EMEA — establishing QAD's partner ecosystem from a low base to a fully operational indirect channel.</div></li>
+      <li><div><strong>CoSell Engine:</strong> Implemented a structured CoSell methodology with the SVP of Sales and Enterprise AEs, delivering a 30% uplift in total sales pipeline within the first year.</div></li>
+      <li><div><strong>Hybrid GTM Transformation:</strong> Transitioned QAD's EMEA business from a direct-only model to a hybrid GTM, expanding total addressable market and creating a more capital-efficient revenue stream.</div></li>
+      <li><div><strong>Global GSI Leadership:</strong> Senior stakeholder for Global System Integrators (Accenture, Tata Consulting Services, Tech Mahindra, KPMG) across NAMER, EMEA, and APAC — managing joint selling motions and executive relationships at the highest level.</div></li>
+      <li><div><strong>Manufacturing & Life Science Ecosystem:</strong> Led joint GTM strategy with Veeva Systems and ISV partners, opening new vertical pipeline in regulated industries.</div></li>
+    </ul>
+    <div class="job-wins">
+      <span class="win-pill">$15M pipeline</span>
+      <span class="win-pill">25 partners recruited</span>
+      <span class="win-pill">30% CoSell uplift</span>
+      <span class="win-pill grey">Accenture · TCS · Tech Mahindra · KPMG</span>
+      <span class="win-pill grey">Veeva ISV GTM</span>
+      <span class="win-pill grey">NAMER · EMEA · APAC</span>
+    </div>
+  </div>
+
+  <!-- PLURALSIGHT -->
+  <div class="job reveal">
+    <div class="job-header">
+      <div class="job-title">GTM Channel Lead, EMEA</div>
+      <div class="job-dates">2022 – 2023</div>
+    </div>
+    <div class="job-company">Pluralsight &nbsp;·&nbsp; SaaS Technology Learning &nbsp;·&nbsp; EMEA</div>
+    <ul class="job-bullets">
+      <li><div><strong>Greenfield Revenue Build:</strong> Hired at VP level to build a new channel and partnerships function from the ground up within a historically direct-sales organisation.</div></li>
+      <li><div><strong>Accelerated Growth:</strong> Scaled channel-sourced revenue from $0 to $1M ARR within the first six months, establishing a new, high-growth revenue vector.</div></li>
+      <li><div><strong>Hyperscaler Alliance Leadership:</strong> Established and led strategic CoSell partnerships with AWS, GCP, and Microsoft, leveraging their ecosystems for rapid market penetration.</div></li>
+      <li><div><strong>Partner Recruitment:</strong> Recruited and managed GSIs (Accenture), RSIs, MSPs, and Ingram Micro Distribution using a Power of 3 methodology with AWS/Google and their RSI Premium Partners.</div></li>
+      <li><div><strong>Executive Advisor:</strong> Advised the Executive Leadership Team on global indirect channel strategy, influencing company-wide GTM planning.</div></li>
+      <li><div><strong>Team Builder:</strong> Recruited, managed, and led a team of EMEA Account Executives and Channel Business Development Reps.</div></li>
+    </ul>
+    <div class="job-wins">
+      <span class="win-pill">$0 → $1M ARR in 6 months</span>
+      <span class="win-pill">Greenfield build</span>
+      <span class="win-pill grey">AWS · GCP · Microsoft</span>
+      <span class="win-pill grey">Accenture GSI</span>
+      <span class="win-pill grey">Ingram Micro distribution</span>
+    </div>
+  </div>
+
+  <!-- VODAFONE -->
+  <div class="job reveal">
+    <div class="job-header">
+      <div class="job-title">Senior Channel & Partnership Leader</div>
+      <div class="job-dates">2018 – 2022</div>
+    </div>
+    <div class="job-company">Vodafone &nbsp;·&nbsp; Vodafone Business &nbsp;·&nbsp; Ireland</div>
+    <ul class="job-bullets">
+      <li><div><strong>P&L Growth Driver:</strong> Achieved 250% Channel Sales growth and 200% Retail Channel growth within 6 months by overhauling strategy, partner mix, and sales operations.</div></li>
+      <li><div><strong>Full Ecosystem Management:</strong> Held full P&L responsibility for the Vodafone Business partner ecosystem, including VARs, Contact Centre BPOs, Retail, Franchise, ISVs, and B2B partners.</div></li>
+      <li><div><strong>Strategic Negotiations:</strong> Secured multi-million-dollar, long-term contracts with key BPO partners including Concentrix.</div></li>
+      <li><div><strong>Commercial Restructuring:</strong> Made decisive decisions to terminate underperforming partners and repair strained relationships, optimising channel profitability.</div></li>
+      <li><div><strong>Digital Transformation:</strong> Implemented Big Data BI Dashboards for real-time KPI tracking, enhancing sales productivity and strategic decision-making.</div></li>
+    </ul>
+    <div class="job-wins">
+      <span class="win-pill">250% channel growth</span>
+      <span class="win-pill">200% retail growth in 6 months</span>
+      <span class="win-pill grey">Full P&L ownership</span>
+      <span class="win-pill grey">VARs · BPOs · ISVs · Retail</span>
+      <span class="win-pill grey">Concentrix</span>
+    </div>
+  </div>
+
+  <!-- ECOSYSTEM GURU -->
+  <div class="job reveal">
+    <div class="job-header">
+      <div class="job-title">Founder & Fractional CRO</div>
+      <div class="job-dates">2015 – 2018</div>
+    </div>
+    <div class="job-company">Ecosystem Guru &nbsp;·&nbsp; ecosystemguru.com &nbsp;·&nbsp; Dublin / US</div>
+    <div class="job-summary">Deliberate entrepreneurial pivot to build deep SaaS GTM expertise across US markets — advising high-growth firms on indirect revenue strategy before returning to senior corporate leadership.</div>
+    <ul class="job-bullets">
+      <li><div><strong>Fractional CRO/VP Sales:</strong> Served as fractional sales leader for US SaaS firms (Vendasta, SteadyServ, Towerdata), building and executing revenue plans.</div></li>
+      <li><div><strong>GTM Architect:</strong> Guided companies on integrating MEDDICC & CoSell methodologies to create predictable revenue streams.</div></li>
+      <li><div><strong>Market Expansion Advisor:</strong> Led US BPO Working Solutions on their EMEA market entry strategy.</div></li>
+      <li><div><strong>Partnership & Ecosystem:</strong> Recruitment of Hyperscalers (AWS/GCP/MS), GSIs, RSIs, MSPs, ISVs, and Selection Consultants.</div></li>
+    </ul>
+    <div class="job-wins">
+      <span class="win-pill grey">Fractional CRO</span>
+      <span class="win-pill grey">MEDDICC & CoSell</span>
+      <span class="win-pill grey">US SaaS GTM</span>
+      <span class="win-pill grey">EMEA market entry</span>
+    </div>
+  </div>
+
+  <!-- BSKYB -->
+  <div class="job reveal">
+    <div class="job-header">
+      <div class="job-title">Country Manager — Senior Leadership Team</div>
+      <div class="job-dates">2007 – 2015</div>
+    </div>
+    <div class="job-company">BSkyB &nbsp;·&nbsp; Sky Business Ireland &nbsp;·&nbsp; Dublin</div>
+    <div class="job-summary">Member of the Senior Leadership Team with full P&L and commercial autonomy for Sky Business Ireland, reporting to the MD.</div>
+    <ul class="job-bullets">
+      <li><div><strong>General Management & P&L Leadership:</strong> Held full accountability for the country's commercial operations, budgeting, financial modelling, and pricing strategy.</div></li>
+      <li><div><strong>Revenue Growth Driver:</strong> Delivered 20% net growth in a mature market and achieved a 100% revenue increase (€50M) over tenure.</div></li>
+      <li><div><strong>Direct Enterprise Sales:</strong> Secured multiple $1M+ ARR enterprise deals and led high-stakes negotiations, including with the Irish Government for a new 800-employee HQ.</div></li>
+      <li><div><strong>Large-Scale Team Leadership:</strong> Managed a cross-functional team of 50+ staff across Sales, Legal, Compliance, and Third-Party relationships.</div></li>
+      <li><div><strong>Strategic Partnerships:</strong> Led content acquisition deals for premier sports rights (GAA, EPL), critical to the company's value proposition and subscriber growth.</div></li>
+    </ul>
+    <div class="job-wins">
+      <span class="win-pill">€50M P&L</span>
+      <span class="win-pill">100% revenue growth</span>
+      <span class="win-pill grey">50+ person team</span>
+      <span class="win-pill grey">Irish Government deal</span>
+      <span class="win-pill grey">Senior Leadership Team</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="expertise-section">
+  <div class="section-label reveal">Core capabilities</div>
+  <h2 class="section-title reveal">What I do best.</h2>
+  <p class="section-intro reveal">Six areas where I consistently deliver outcomes others find difficult.</p>
+  <div class="exp-grid">
+    <div class="exp-card reveal">
+      <div class="exp-card-icon">🏗️</div>
+      <div class="exp-card-title">Greenfield Ecosystem Builds</div>
+      <div class="exp-card-body">Building partner functions from zero — strategy, recruitment, enablement, and revenue — in businesses that have never run an indirect model. Done it multiple times, always with measurable results in the first quarter.</div>
+      <div class="exp-tags"><span class="exp-tag">Pluralsight</span><span class="exp-tag">QAD</span><span class="exp-tag">Ecosystem Guru</span></div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-card-icon">🤖</div>
+      <div class="exp-card-title">AI & Agentic GTM Strategy</div>
+      <div class="exp-card-body">Leading the channel GTM for AI and Agentic AI solutions — positioning AI portfolios as industry standards and building the partner ecosystem needed to scale AI adoption through indirect channels at enterprise scale.</div>
+      <div class="exp-tags"><span class="exp-tag">QAD AI</span><span class="exp-tag">Agentic AI</span><span class="exp-tag">Manufacturing AI</span></div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-card-icon">🔗</div>
+      <div class="exp-card-title">GSI & Hyperscaler Alliances</div>
+      <div class="exp-card-body">Senior-level relationships and joint selling motions with Accenture, TCS, Tech Mahindra, KPMG, AWS, GCP, and Microsoft — across NAMER, EMEA and APAC simultaneously.</div>
+      <div class="exp-tags"><span class="exp-tag">Accenture</span><span class="exp-tag">TCS</span><span class="exp-tag">AWS</span><span class="exp-tag">GCP</span><span class="exp-tag">Microsoft</span></div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-card-icon">⚙️</div>
+      <div class="exp-card-title">CoSell & Revenue Operations</div>
+      <div class="exp-card-body">Designing and implementing CoSell methodologies that integrate partner pipeline with direct sales engines — delivering measurable pipeline uplift, not just partner activity metrics.</div>
+      <div class="exp-tags"><span class="exp-tag">CoSell</span><span class="exp-tag">MEDDICC</span><span class="exp-tag">30% pipeline uplift</span></div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-card-icon">🌍</div>
+      <div class="exp-card-title">Global GTM Transformation</div>
+      <div class="exp-card-body">Transitioning businesses from direct-only to hybrid GTM models — expanding total addressable market, improving capital efficiency, and building the operational infrastructure to sustain indirect growth at scale.</div>
+      <div class="exp-tags"><span class="exp-tag">Hybrid GTM</span><span class="exp-tag">EMEA</span><span class="exp-tag">NAMER</span><span class="exp-tag">APAC</span></div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-card-icon">💼</div>
+      <div class="exp-card-title">P&L & Commercial Leadership</div>
+      <div class="exp-card-body">Full commercial accountability at country and ecosystem level — budgeting, pricing, partner profitability, and the hard decisions that most partnership leaders avoid. Experienced at C-suite and Senior Leadership Team level.</div>
+      <div class="exp-tags"><span class="exp-tag">€50M P&L</span><span class="exp-tag">SLT member</span><span class="exp-tag">250% channel growth</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="edu-section">
+  <div class="section-label reveal">Education & Certifications</div>
+  <h2 class="section-title reveal">Academic & professional credentials.</h2>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-title">Masters of Business Administration</div>
+      <div class="edu-org">Dundalk Institute of Technology, Ireland</div>
+      <div class="edu-year">2008 – 2010</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">🏛️</div>
+      <div class="edu-title">Entrepreneur & Leadership Executive Program</div>
+      <div class="edu-org">Babson College, Boston, Massachusetts, USA</div>
+      <div class="edu-year">2010</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">☁️</div>
+      <div class="edu-title">AWS Cloud Essentials for Business Leaders</div>
+      <div class="edu-org">Amazon Web Services</div>
+      <div class="edu-year">2023</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">🤝</div>
+      <div class="edu-title">Strategic Partnerships: Ecosystems and Platforms</div>
+      <div class="edu-org">Professional Certification</div>
+      <div class="edu-year">2022</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">💻</div>
+      <div class="edu-title">Tech Foundations</div>
+      <div class="edu-org">Professional Certification</div>
+      <div class="edu-year">2022</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">🌐</div>
+      <div class="edu-title">International Business</div>
+      <div class="edu-org">Deep expertise across US and European business cultures, markets, and GTM nuances</div>
+      <div class="edu-year">15+ years</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="footer">
+  <div class="section-label" style="display:flex; justify-content:center; margin-bottom:16px;">Get in touch</div>
+  <h2 class="section-title">Open to the right opportunity.</h2>
+  <p class="section-intro">Senior partnerships and channel leadership roles at AI-native, SaaS, and enterprise technology companies. Remote or hybrid. Global scope.</p>
+  <div class="footer-contacts reveal">
+    <a href="mailto:afitz27@gmail.com" class="footer-pill">✉ afitz27@gmail.com</a>
+    <a href="tel:+353879500092" class="footer-pill">📞 +353 87 9500092</a>
+    <a href="https://www.linkedin.com/in/fitzgeraldadrian/" target="_blank" class="footer-pill">in LinkedIn</a>
+    <a href="http://www.ecosystemguru.com" target="_blank" class="footer-pill">↗ ecosystemguru.com</a>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<!-- PASSWORD GATE -->
+<div id="pw-gate">
+  <div class="pw-box" id="pw-box">
+    <div class="pw-logo">AF</div>
+    <div class="pw-title">Private page</div>
+    <div class="pw-sub">This page is shared privately.<br>Enter the password to continue.</div>
+    <input type="password" id="pw-input" class="pw-input" placeholder="Enter password" autocomplete="off" onkeydown="if(event.key==='Enter') checkPw()"/>
+    <button class="pw-btn" onclick="checkPw()">View page →</button>
+    <div class="pw-error" id="pw-error"></div>
+  </div>
+</div>
+<script>
+(function() {
+  const CORRECT = 'Fitz27';
+  const KEY = 'af_resume_auth';
+  if (sessionStorage.getItem(KEY) === '1') document.getElementById('pw-gate').classList.add('hidden');
+  window.checkPw = function() {
+    const val = document.getElementById('pw-input').value.trim().replace(/\s+/g,'');
+    if (val.toLowerCase() === CORRECT.toLowerCase()) {
+      sessionStorage.setItem(KEY, '1');
+      const gate = document.getElementById('pw-gate');
+      gate.style.opacity = '0'; gate.style.transition = 'opacity 0.4s ease';
+      setTimeout(() => gate.classList.add('hidden'), 400);
+    } else {
+      document.getElementById('pw-error').textContent = 'Incorrect password. Please try again.';
+      const box = document.getElementById('pw-box');
+      box.classList.remove('pw-shake'); void box.offsetWidth; box.classList.add('pw-shake');
+      document.getElementById('pw-input').value = ''; document.getElementById('pw-input').focus();
+    }
+  };
+})();
+</script>
+</body>
+</html>
